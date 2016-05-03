@@ -211,7 +211,7 @@ module Rake
           r.invoke_with_call_chain(prereq_args, invocation_chain)
         end
       end
-      futures.each { |f| f.value }
+      futures.reverse_each { |f| f.value }
     end
 
     # Format the trace flags for display.
